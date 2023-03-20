@@ -12,6 +12,7 @@ Learning objectives:
 
 ### What is Node.js
 - É um ambiente server-side de Node;js, que permite rodar código JS através da sua engine V8 fora dos navegadores
+
 Aplicaçoes que podem ser desenvolvidas com Node:
 - Servidores web HTTP
 - Microsserviços ou APIs backend serverless
