@@ -29,8 +29,10 @@ Modelo arquitetural do Node.js:
 - Operações de entrada/saída, leitura/escrita são chamadas de operações bloqueantes, ou seja, a tarefa atual bloqueia o prosseguimento das outras tarefas. O node passa a executar os próximos eventos uma vez que a tarefa atual estiver concluída.
 - É a chamada arquitetura event-driven
 
-Arquitetura: 
+Arquitetura:
+
 ![image](https://user-images.githubusercontent.com/67758151/226448865-bc2cf562-f9a2-481f-acbb-0ad385ebb2d2.png)
+
 
 As fases principais de um loop de eventos são:
 - Timers: Processa uma função callback agendada por `setTimeout()` ou `setInterval()`
