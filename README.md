@@ -121,7 +121,10 @@ Comandos NPM:
 para listar todos os comandos npm, utilizar `npm --help`
 
 Dependências de produção vs dependências de desenvolvimento
-Produção: 
+- Produção: São dependências que devem estar inclusas no projeto durante a fase de produção. No arquivo package.json, essas dependências ficam numa seção chamada `dependencies` 
+- Desenvolvimento: São dependências que são necessárias somente para o desenvolvimento da aplicação, como bibliotecas de teste e etc. No arquivo package.json, essas dependências ficam numa seção chamada `devDependencies`. 
+ 
+Durante a instalação dos pacotes, denotar no terminal com `-- production` instalará as dependências na seção de produção.
 
 
 ## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
