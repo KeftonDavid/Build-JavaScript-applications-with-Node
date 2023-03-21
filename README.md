@@ -56,6 +56,37 @@ Funcionamento do REPL:
 Para entrar no modo REPL, utilizar o comando `node` no terminal
 
 ## Create a new Node.js project and work with dependencies
+### Introduction
+Learning objectives:
+- Inicializar projetos Node.js
+- Entender de que consiste o arquivo package.json e aprender a utilizá-lo em sua vantagem
+- Adicionar pacotes e remover pacotes do seu projeto node
+- Administrar as dependências e atualizá-las de forma previsível
+
+### Configure the package.json
+O arquivo package.json contém metadados do seu projeto Node, também administrando suas dependências e etc. 
+
+Inicializar um package.json:
+- Para inicializar, é utilizado o comando `init`
+
+Conteúdos do package.json:
+- Meta-informações: São metadados sobre o projeto, como nome, descrição, autor, palavras-chave e etc.
+- Dependências: Dependências do projeto, podendo ser `dependencies` ou `devDependencies`
+- Scripts: Scripts próprios do projeto.
+
+Scripts para administrar o projeto:
+`start`: Invoca o comando `node` juntamente do arquivo javascript que for especificado.
+`build`: Descreve como fazer a build do projeto
+`test`: Executa testes para o projeto.
+`lint`: Invoca um linter como o ESLint. Um linter encontra inconsistências de código.
+
+Exemplo prático de definição de scripts:
+`"scripts" : {
+  "start" : "node ./dist/index.js",
+  "test": "jest",
+  "build": "tsc",
+  "lint": "eslint"
+}`
 
 ## Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## Work with files and directories in a Node.js app
