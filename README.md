@@ -81,14 +81,14 @@ Scripts para administrar o projeto:
 `lint`: Invoca um linter como o ESLint. Um linter encontra inconsistências de código.
 
 Exemplo prático de definição de scripts:
-`
+```
 "scripts" : {
   "start" : "node ./dist/index.js", 
   "test": "jest", 
   "build": "tsc", 
   "lint": "eslint" 
 }
-`
+```
 
 ## Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## Work with files and directories in a Node.js app
