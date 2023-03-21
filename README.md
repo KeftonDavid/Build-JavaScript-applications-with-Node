@@ -90,6 +90,39 @@ Exemplo prático de definição de scripts:
   "lint": "eslint" 
 }
 ```
+### Exercise - Configure the package.json
+Realizado e demonstrado em código, seguindo o que foi aprendido
+
+### Add packages to your Node.js project
+O node possui bibliotecas padrão para fazer o tratamento de dados, porém, existe uma grande quantidade de bibliotecas de terceiros, que podem ser instaladas em um projeto utilizando o npm (node package manager). Essas bibliotecas são chamadas de dependências quando estão instaladas em um projeto.
+
+Como determinar se você precisa de uma dependência:
+- Você precisa concluir uma tarefa ou parte de uma aplicação que possui muitos casos de uso e não deve possuir erros sob qualquer hipótese (como segurança)
+- Poupar tempo
+- Manutenibilidade
+
+Como validar um pacote:
+Antes de instalar uma dependência, é necessário observar alguns fatores e outras dependências das quais esse pacote utiliza.
+- Observar o tamanho do pacote, em caso de limitações de banda ou hardware
+- A licensa de alguns pacotes pode apresentar impecílios caso o seu projeto seja comercializado
+- Observar se o pacote possui manutenção ativa dos seus contribuíntes
+
+Instalação de pacotes: 
+A instalação é feita utilizando a ferramenta de terminal `npm`. O comando de instalação padrão é `npm install <nome-pacote>`
+
+Encontrar um pacote:
+Pacotes podem ser encontrados em diferentes lugares, tais como:
+- Registros globais como o npm registry
+- Repositórios do GitHub por exemplo
+- Arquivos locais
+- Diretórios
+
+Comandos NPM:
+para listar todos os comandos npm, utilizar `npm --help`
+
+Dependências de produção vs dependências de desenvolvimento
+Produção: 
+
 
 ## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## 4. Work with files and directories in a Node.js app
