@@ -1,5 +1,6 @@
 # Build JavaScript applications with Node.js
-Trilha inicial de estudos da Microsoft Learn sobre Node.js, consistindo de 6 módulos para estudo, a qual estou utilizando por motivo de revisão e garantia de que tenho/terei uma base sólida em Node.js. "É impossível para um homem aprender aquilo que ele acha que já sabe." (Epicteto)
+Trilha inicial de estudos da Microsoft Learn sobre Node.js, consistindo de 6 módulos para estudo, a qual estou utilizando por motivo de revisão e garantia de que tenho/terei uma base sólida em Node.js. 
+> "É impossível para um homem aprender aquilo que ele acha que já sabe." (Epicteto)
 
 # Módulos
 ## 1. Introduction to Node.js
