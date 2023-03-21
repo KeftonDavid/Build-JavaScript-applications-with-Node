@@ -2,7 +2,7 @@
 Trilha inicial de estudos da Microsoft Learn sobre Node.js, consistindo de 6 módulos para estudo, a qual estou utilizando por motivo de revisão e garantia de que tenho/terei uma base sólida em Node.js. "É impossível para um homem aprender aquilo que ele acha que já sabe." (Epicteto)
 
 # Módulos
-## Introduction to Node.js
+## 1. Introduction to Node.js
 ### Introduction
 Learning objectives:
 - Explicar o que é o Node
@@ -55,7 +55,7 @@ Funcionamento do REPL:
 - Loop: Aguarda um novo input do usuário.
 Para entrar no modo REPL, utilizar o comando `node` no terminal
 
-## Create a new Node.js project and work with dependencies
+## 2. Create a new Node.js project and work with dependencies
 ### Introduction
 Learning objectives:
 - Inicializar projetos Node.js
@@ -90,7 +90,7 @@ Exemplo prático de definição de scripts:
 }
 ```
 
-## Interactively debug Node.js apps with the built-in and Visual Studio debuggers
-## Work with files and directories in a Node.js app
-## Build a web API with Node.js and Express
-## Introduction to route management in Node.js with Javascript 
+## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
+## 4. Work with files and directories in a Node.js app
+## 5. Build a web API with Node.js and Express
+## 6. Introduction to route management in Node.js with Javascript 
