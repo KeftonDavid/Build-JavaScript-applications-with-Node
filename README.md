@@ -1,5 +1,5 @@
 # Build JavaScript applications with Node.js
-Trilha inicial de estudos da Microsoft Learn sobre Node.js, consistindo de 6 módulos para estudo, a qual estou utilizando por motivo de revisão e garantia de que tenho/terei uma base sólida em Node.js. 
+Trilha inicial de estudos da Microsoft Learn sobre Node.js, consistindo de 6 módulos para estudo, a qual estou utilizando por motivo de revisão e garantia de que tenho/terei uma base sólida em Node.js. "É impossível para um homem aprender aquilo que ele acha que já sabe." (Epicteto)
 
 # Módulos
 ## Introduction to Node.js
@@ -41,9 +41,22 @@ As fases principais de um loop de eventos são:
 - Check: permite a execução de callbacks após o término de um Poll
 - Close Callbacks: fechamento de eventos, ex: `socket.destroy()`
 
+### Why you might need Node.js
+- É uma tecnologia multipropósito
+- Possui comunidade ativa
+- É opensource
 
+### Try Node.js
+O Node.js possui um modo interativo de console, denominado REPL(read-eval-print loop) que pode ser utilizado para experimentação rápida de código.
+Funcionamento do REPL:
+- Read: Faz a leitura do código input
+- Eval: Valida o código
+- Print: Printa o resultado do código
+- Loop: Aguarda um novo input do usuário.
+Para entrar no modo REPL, utilizar o comando `node` no terminal
 
 ## Create a new Node.js project and work with dependencies
+
 ## Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## Work with files and directories in a Node.js app
 ## Build a web API with Node.js and Express
