@@ -174,9 +174,9 @@ Padrões para configurar versões principais/secundárias/corretivas:
 
 |**Padrão**|**Nível de atualização**|
 |---|---|
-|x.0.0 ou \*\|Atualizar para a maior versão principal|
-|1.x.1 ou \^\|Atualizar para somente a versão secundária|
-|1.1.x ou \~\|Atualizar para a última versão de correção|
+|x.0.0 ou \*|Atualizar para a maior versão principal|
+|1.x.1 ou \^|Atualizar para somente a versão secundária|
+|1.1.x ou \~|Atualizar para a última versão de correção|
 
 ## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## 4. Work with files and directories in a Node.js app
