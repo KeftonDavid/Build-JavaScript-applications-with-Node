@@ -178,6 +178,11 @@ Padrões para configurar versões principais/secundárias/corretivas:
 |1.x.1 ou \^|Atualizar para somente a versão secundária|
 |1.1.x ou \~|Atualizar para a última versão de correção|
 
+Você pode usar o padrão "~1.0.0" para atualizar somente a versão de correção.
+
+### package-lock.json
+
+
 ## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## 4. Work with files and directories in a Node.js app
 ## 5. Build a web API with Node.js and Express
