@@ -126,6 +126,19 @@ Dependências de produção vs dependências de desenvolvimento
  
 Durante a instalação dos pacotes, denotar no terminal com `-- production` instalará as dependências na seção de produção.
 
+Como instalar um pacote:
+Utilizando o comando `npm install <nome-pacote>` instala uma dependência normal. Para adicionar a dependência como dependência de desenvolvimento, adicionar a flag `--save-dev`.
+Para instalar um pacote globalmente, utilizar a flag `-g` junto do comando `npm install`
+
+Após a instalação:
+Os pacotes instalados estarão referenciados no package.json, porém na pasta node_modules, não será instalado somente o pacote, mas também todas as outras dependências que esse pacote instalado utiliza.
+
+Excluir dependências:
+Existem duas maneiras:
+- Desinstalar: Utilizando o comando `npm uninstall <nome-pacote>` você removerá o pacote do package.json e também da pasta node_modules.
+- Prune: Utilizando `npm prune` você removerá quaisquer dependências na pasta node_modules que não estejam listadas no package.json.
+
+### Exercise - Install packages
 
 ## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## 4. Work with files and directories in a Node.js app
