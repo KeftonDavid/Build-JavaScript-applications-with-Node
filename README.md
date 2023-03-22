@@ -139,6 +139,44 @@ Existem duas maneiras:
 - Prune: Utilizando `npm prune` você removerá quaisquer dependências na pasta node_modules que não estejam listadas no package.json.
 
 ### Exercise - Install packages
+Demonstrado em código, o exercício tinha o objetivo de instalar o Jest, criar um script de teste para o jest, criar uma pasta de teste, com um arquivo de teste a ser usado pelo Jest para testar o arquivo address-parser.js
+
+### Manage dependency updates in your Node.js project
+Considerações a serem feitas antes de atualizar uma biblioteca:
+- O tipo de atualização: Analisar o tipo de atualização, para que não venha a quebrar seu código.
+- Se o projeto está configurado corretamente: É possível configurar um projeto node para ter somente o tipo de atualização especificado.
+- Problemas de segurança: Analisa se algum pacote utilizado teve alguma vulnerabilidade detectada, e o atualizar assim que possível.
+
+Versionamento semântico:
+É um padrão de indústria que os desenvolvedores utilizam para indicar a versão e o tipo de atualização de um pacote. O número de versão é dividido em três seções:
+- Versão principal: É o número mais a esquerda. Por exemplo, o número 1 em 1.0.0. Uma mudança nesse número significa que você deve esperar mudanças que podem quebrar seu código.
+- Versão secundária: É o número do meio. Por exemplo, o número 2 em 1.2.0. Uma mudança nesse número significa que foram adicionadas novas funcionalidades, então seu código deve continuar funcionando.
+- Versão de correção: É o número mais a direita. Por exemplo, o número 3 em 1.2.3. Uma mudança nesse número significa que foi feita uma mudança que corrigiu algo em algum código que deveria estar funcionando, então costuma ser seguro aceitar esse tipo de atualização.
+
+Atualizar um pacote com o NPM: 
+O comando utilizado para atualizar pacotes é `npm update <nome-pacote>@<argumento-opcional-com-numero-da-versao>`
+
+A atualização depende de duas condições:
+- Se o argumento de versão é especificado como parte do comando de atualização
+- O que está definido no package.json: Caso esteja definida alguma regra para como a dependência deva ser atualizada. Ex: `"<nome-dependência>" : "1.1.x"`. O npm respeita o padrão imposto pela regra e tenta atualizar a dependência de acordo.
+
+Abordagem de atualização:
+Para atualizar uma dependência, pensar sempre nos riscos:
+- Versão principal: Ao aceitar essa att, aceitar o fato de talvez ter que refatorar código.
+- Versão secundária: Aceitar novas funcionalidades, desde que não quebre nada.
+- Versão de correção: Aceitar apenas correções de bug.
+
+### Configurar o package.json para atualizações
+Antes de atualizar dependências, é boa prática configurar o package.json para que o comportamento do mesmo seja previsível ao utilizar o comando de atualização. O Node possui um conjunto de símbolos para a definição do comportamento das atualizações de pacotes.
+Adicionar prefixos junto da dependência no package.json é o processo utilizado.
+
+Padrões para configurar versões principais/secundárias/corretivas:
+
+|**Padrão**|**Nível de atualização|
+|---|---|
+|x.0.0 ou \*\|Atualizar para a maior versão principal|
+|1.x.1 ou \^\|Atualizar para somente a versão secundária|
+|1.1.x ou \~\|Atualizar para a última versão de correção|
 
 ## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## 4. Work with files and directories in a Node.js app
