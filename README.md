@@ -172,7 +172,7 @@ Adicionar prefixos junto da dependência no package.json é o processo utilizado
 
 Padrões para configurar versões principais/secundárias/corretivas:
 
-|**Padrão**|**Nível de atualização|
+|**Padrão**|**Nível de atualização**|
 |---|---|
 |x.0.0 ou \*\|Atualizar para a maior versão principal|
 |1.x.1 ou \^\|Atualizar para somente a versão secundária|
