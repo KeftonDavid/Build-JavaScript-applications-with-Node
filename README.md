@@ -209,7 +209,64 @@ O comando `npm audit fix` tenta corrigir o problema atualizando o pacote para um
 Exercício demonstrado em código, no qual consistiu em instalar os pacotes definidos no package.json, resolver problemas de segurança das dependências, verificar dependências desatualizadas, atualizar as dependências de acordo com as regras de versionamento semântico, e após isso atualizar os pacotes para a última versão disponível, além das regras de versionamento definidas no package.json
 
 
-## 3. Depurar aplicativos Node.js interativamente com depuradores internos e do Visual Studio Code 
+## 3. Depurar aplicativos Node.js interativamente com depuradores internos e do Visual Studio Code
+### Introdução
+#### Objetivos de aprendizagem:
+- Usar o depurador do Visual Studio Code com um programa Node.js.
+- Criar pontos de interrupção e executar o código passo a passo para encontrar problemas
+- Inspecionar o estado do programa em qualquer etapa de execução
+- Retroceder a pilha de chamada de eventos para encontrar a origem de uma exceção
+
+### O que é um depurador (debugger)
+É uma ferramenta usada para monitorar e controlar o fluxo de execução do seu programa com uma abordagem analítica, tendo como objetivo encontrar a origem de bugs na sua aplicação. Existem tanto depuradores que funcionam direto no terminal, quanto depuradores com uma ionterface gráfica de usuário (GUI).
+
+#### Porque utilizar um depurador?
+Desenvolver um software sem um depurador, significa que muito provavelmente você está adivinhando o que acontece no seu programa, diferentemente de com um depurador, em que você é capaz de observar o que acontece de fato.
+Cada depurador possui suas funcionalidades. Existem duas principais:
+- Controlar a execução do programa: Você pode pausar a execução do software, e executar passo a passo podendo observar o código executado.
+- Observar o estado do programa: Você pode ver o valor das variáveis, funções e etc.
+
+### Depurar com o depurador interno do Node.js
+A depuração segue um passo a passo:
+- Identifique o bug no código
+- Encontre onde o bug está localizado no código
+- Analizar porque o bug ocorre
+- Corrija o bug
+- Tenha certeza de que a correção funciona
+
+#### Pontos de interrupção
+São pontos definidos pelo programador, que interrompem a execução do programa na porção de código em que o desenvolvedor suspeita que haja bugs.
+No JavaScript é possível utilizar a declaração universal `debugger` para depurar o código. 
+
+#### Modo de inspeção do Node.js
+Visto que o depurador possui acesso completo à execução do programa, isso poderia ser utilizado maliciosamente. Por esta razão, o Node não permite depurar um código sendo executado. Para depurar, é necessário ativar o modo inspeção com a opção `--inspect`, que por padrão estará no host 127.0.0.1 na porta 9229. Utilizar `--inspect=<HOST>:<PORT>` para definir porta e hospedagem.
+** Importante não vincular o depurador à um IP público ou a 0.0.0.0, para evitar que um invasor possa causar danos.**
+O comando `--inspect-brk` pode ser usado, funcionando como o inspect, porém parando o seu código antes do começo.
+
+#### Erro de tempo limite do node inspect
+Se `node inspect` ou `node --inspect` retornar um erro de tempo limite, você pode tentar instalar o modo inspeção globalmente no s eu sistema para resolver o problema.
+
+#### Depurador interno
+O node inspect é um depurador de linha de comando que vem atrelado ao Node.js. Utilizar `node inspect <seu-script.js>` executará o código em modo inspeção.
+Após isso, existe uma série de comandos node inspect que podem ser utilizados para controle do programa:
+- `cont` ou `c`: Continua a execução até o próximo ponto de interrupção ou o fim do código.
+- `next` ou `n`: Executa a próxima linha de código.
+- `step` ou `s`: É o mesmo que `next`, porém se a próxima linha for uma chamada de função, o depurador vai para a primeira linha de código da função chamada.
+- `out` ou `o`: Se o contexto da execução atual está dentro de uma função, executar o código restante da função e voltar para onde a função havia sido chamada.
+- `restart` ou `r`: Reinicia o programa e pausa a execução antes do começo do código.
+
+Para definir pontos de interrupção:
+- `setBreakpoint()` ou `sb()`: Adicionar ponto de interrupção na linha atual.
+- `setBreakpoint(N)` ou `sb(<N>)`: Adiciona ponto de interrupção na linha N.
+- `clearBreakpoint('seu-script.js', <N>)` ou `cb('seu-script.js', <N>)`: Remover ponto no arquivo `seu-script.js` na linha N.
+
+Para receber informações sobre o ponto de execução:
+- `list(<N>)`: listar código com N linhas antes e após o ponto de execução atual.
+- `exec<EXPR>`: Validar uma expressão de acordo com o contexto atual, podendo ser possível obter o valor de variáveis.
+Usar `help` mostra a lista de comandos, e `.exit` ou CTRL+D podem ser usados pra sair do depurador.
+
+### Exercício: Usar o depurador interno do Node.js
+
 ## 4. Work with files and directories in a Node.js app
 ## 5. Build a web API with Node.js and Express
 ## 6. Introduction to route management in Node.js with Javascript 
