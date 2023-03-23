@@ -206,6 +206,8 @@ AO atualizar ou instalar dependências, você receberá um log que te mostrará 
 O comando `npm audit fix` tenta corrigir o problema atualizando o pacote para uma versão secundária em que a vulnerabilidade não exista mais. Se isso não for o suficiente, utilizar `npm audit fix --force` atualizará o pacote para uma versão principal em que o problema esteja corrigido.
 
 ### Exercício - Administrar problemas de segurança
+Exercício demonstrado em código, no qual consistiu em instalar os pacotes definidos no package.json, resolver problemas de segurança das dependências, verificar dependências desatualizadas, atualizar as dependências de acordo com as regras de versionamento semântico, e após isso atualizar os pacotes para a última versão disponível, além das regras de versionamento definidas no package.json
+
 
 ## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
 ## 4. Work with files and directories in a Node.js app
