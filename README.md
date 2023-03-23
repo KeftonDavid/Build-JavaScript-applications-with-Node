@@ -209,7 +209,7 @@ O comando `npm audit fix` tenta corrigir o problema atualizando o pacote para um
 Exercício demonstrado em código, no qual consistiu em instalar os pacotes definidos no package.json, resolver problemas de segurança das dependências, verificar dependências desatualizadas, atualizar as dependências de acordo com as regras de versionamento semântico, e após isso atualizar os pacotes para a última versão disponível, além das regras de versionamento definidas no package.json
 
 
-## 3. Interactively debug Node.js apps with the built-in and Visual Studio debuggers
+## 3. Depurar aplicativos Node.js interativamente com depuradores internos e do Visual Studio Code 
 ## 4. Work with files and directories in a Node.js app
 ## 5. Build a web API with Node.js and Express
 ## 6. Introduction to route management in Node.js with Javascript 
