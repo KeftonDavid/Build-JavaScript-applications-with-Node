@@ -266,6 +266,9 @@ Para receber informações sobre o ponto de execução:
 Usar `help` mostra a lista de comandos, e `.exit` ou CTRL+D podem ser usados pra sair do depurador.
 
 ### Exercício: Usar o depurador interno do Node.js
+Exercício realizado na plataforma Microsoft Learn com terminal integrado Azure Cloud. O exercício consistiu em criar um arquivo .js com uma sequência de fibbonacci que apresenta um bug, utilizar o node inspect, utilizar o comando `s` para entrar na função fibbonacci defeituosa, observar o valor do parâmetro passado para a função através do comando `exec`, entrar no loop for e colocar um ponto de interrupção, verificar o valor do contador do loop for através do `exec` e repetir o processo até o fim do loop for para descobrir onde está o bug. A análise através do depurador ajudou a identificar um erro na definição do loop for, em que na definição de quantas vezes o loop deveria rodar, havia o sinal `<` ao invés de `<=`, fazendo com que o loop rodasse uma vez a menos do que deveria.
+
+#### Depurar com o Visual Studio Code
 
 ## 4. Work with files and directories in a Node.js app
 ## 5. Build a web API with Node.js and Express
