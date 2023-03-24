@@ -268,7 +268,21 @@ Usar `help` mostra a lista de comandos, e `.exit` ou CTRL+D podem ser usados pra
 ### Exercício: Usar o depurador interno do Node.js
 Exercício realizado na plataforma Microsoft Learn com terminal integrado Azure Cloud. O exercício consistiu em criar um arquivo .js com uma sequência de fibbonacci que apresenta um bug, utilizar o node inspect, utilizar o comando `s` para entrar na função fibbonacci defeituosa, observar o valor do parâmetro passado para a função através do comando `exec`, entrar no loop for e colocar um ponto de interrupção, verificar o valor do contador do loop for através do `exec` e repetir o processo até o fim do loop for para descobrir onde está o bug. A análise através do depurador ajudou a identificar um erro na definição do loop for, em que na definição de quantas vezes o loop deveria rodar, havia o sinal `<` ao invés de `<=`, fazendo com que o loop rodasse uma vez a menos do que deveria.
 
-#### Depurar com o Visual Studio Code
+### Depurar com o Visual Studio Code
+O VS Code possui um depurador interno com interface gráfica de usuário.
+
+#### Configurar o Visual Studio Code para depuração do node.js
+O depurador interno do VS Code pode ser acessado na guia lateral **Executar**.
+Formas de ativar o depurador em um projeto Node:
+- Com um arquivo `.js` aberto, selecionar **Executar e Depurar**, e após isso, selecionar **Node.js**.
+- Usar o terminal de depuração. Nesse modo, executar apenas `node seu-script.js` ativará o depurador, sem necessidade de usar o comando `--inspect`.
+- Criar um arquivo **launch.json**
+
+#### Adicionar pontos de interrupção
+Próximo à linha de código que você deseja adicionar um ponto de interrupção, clickar na margem à esquerda. Um círculo vermelho aparecerá quando o ponto de interrupção estiver adicionado. Para removê-lo, basta clickar nele. É também possível adicionar um ponto de interrupção condicional ao clickar com o botão direito, no qual deve ser imposta uma condição para interromper a execução do código, ou seja, é um ponto que só se ativa quando a condição é valida.
+
+#### Visão geral do depurador do VS Code
+
 
 ## 4. Work with files and directories in a Node.js app
 ## 5. Build a web API with Node.js and Express
