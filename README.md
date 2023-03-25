@@ -323,6 +323,7 @@ Nesse painel você pode observar e ativar ou desativar os pontos de interrupçã
 
 #### Controle da execução
 ![image](https://user-images.githubusercontent.com/67758151/227702498-2da2c85c-52f0-432d-ad0d-f0dad5ff0cee.png)
+
 Da esquerda pra a direita:
 - Continuar ou pausar
 - Contornar: executa a próxima instrução de código
@@ -336,6 +337,8 @@ O console de depuração pode ser mostrado com **CTRL+Shift+Y** para visualizar 
 
 #### Adicionar logpoints
 É possível adicionar vários `console.log` em pontos do código para a companhar a execução. Clickar com o botão direito na barra a esquerda do código permite adicionar um logpoint.
+
+### Exercício: depurar com o Visual Studio Code
 
 ## 4. Work with files and directories in a Node.js app
 ## 5. Build a web API with Node.js and Express
