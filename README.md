@@ -284,6 +284,58 @@ Próximo à linha de código que você deseja adicionar um ponto de interrupçã
 #### Visão geral do depurador do VS Code
 ![image](https://user-images.githubusercontent.com/67758151/227700438-bb95b973-bcd5-4b2d-b77d-a4f992e4d6dc.png)
 
+1. Controles de inicialização do depurador
+2. Estado das variáveis
+3. Estado das variáveis inspecionadas
+4. Pilha de chamadas atual
+5. Arquivos de script carregados
+6. Pilha de chamadas
+7. Controles de execução
+8. Etapa da execução atual
+9. Console de depuração
+
+#### Controles de inicialização do depurador
+![image](https://user-images.githubusercontent.com/67758151/227700583-9e487701-60a8-44a9-a10e-14344504ca32.png)
+
+1. Iniciar depuração
+2. Selecionar configuração de inicialização
+3. Editar arquivo `launch.json`
+4. Abrir console de depuração e alternar visibilidade entre painés de variáveis, inspeção, pilha de chamadas e pontos de interrupção
+
+#### Visualizar e editar estado das variáveis
+É possível usar o painel de variáveis para ter acesso ao estado das mesmas.
+O painel as organiza por escopo:
+- Variáveis locais (acessíveis no escopo de código atual)
+- Variáveis globais (acessíveis de qualquer lugar no código)
+- Variáveis de clausura
+
+#### Painel de inspeção de variáveis
+O painel de inspeção pode ser usado para escolher uma variável ou expressão a ser observada durante a execução do código.
+
+#### Painel de pilha de chamadas
+A pilha de chamadas mantém registro das funções chamadas na execução do código, sendo útil para encontrar a fonte de uma exceção. O painel de pilha de chamadas facilita a visualização desses logs.
+
+#### Painel de visualização de arquivos de script carregados
+É o painel que mostra os scripts que foram carregados.
+
+#### Painel de pontos de interrupção
+Nesse painel você pode observar e ativar ou desativar os pontos de interrupção do código.
+
+#### Controle da execução
+![image](https://user-images.githubusercontent.com/67758151/227702498-2da2c85c-52f0-432d-ad0d-f0dad5ff0cee.png)
+Da esquerda pra a direita:
+- Continuar ou pausar
+- Contornar: executa a próxima instrução de código
+- Intervir: funciona como o contornar, porém se a próxima instrução for uma chamada de função, o depurador vai para a primeira instrução dentro da função chamada
+- Sair: Caso dentro de uma função, executa o resto da função e volta para a instrução após a chamada da função.
+- Reiniciar
+- Parar execução e sair
+
+#### Usar o console de depuração
+O console de depuração pode ser mostrado com **CTRL+Shift+Y** para visualizar os registros da aplicação. É possível inserir expressões e variáveis para saber seus respectivos valores.
+
+#### Adicionar logpoints
+É possível adicionar vários `console.log` em pontos do código para a companhar a execução. Clickar com o botão direito na barra a esquerda do código permite adicionar um logpoint.
 
 ## 4. Work with files and directories in a Node.js app
 ## 5. Build a web API with Node.js and Express
