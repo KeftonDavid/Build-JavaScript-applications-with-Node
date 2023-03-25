@@ -282,6 +282,7 @@ Formas de ativar o depurador em um projeto Node:
 Próximo à linha de código que você deseja adicionar um ponto de interrupção, clickar na margem à esquerda. Um círculo vermelho aparecerá quando o ponto de interrupção estiver adicionado. Para removê-lo, basta clickar nele. É também possível adicionar um ponto de interrupção condicional ao clickar com o botão direito, no qual deve ser imposta uma condição para interromper a execução do código, ou seja, é um ponto que só se ativa quando a condição é valida.
 
 #### Visão geral do depurador do VS Code
+![image](https://user-images.githubusercontent.com/67758151/227700438-bb95b973-bcd5-4b2d-b77d-a4f992e4d6dc.png)
 
 
 ## 4. Work with files and directories in a Node.js app
