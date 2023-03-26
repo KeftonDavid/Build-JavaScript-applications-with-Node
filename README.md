@@ -339,6 +339,12 @@ O console de depuração pode ser mostrado com **CTRL+Shift+Y** para visualizar 
 É possível adicionar vários `console.log` em pontos do código para a companhar a execução. Clickar com o botão direito na barra a esquerda do código permite adicionar um logpoint.
 
 ### Exercício: depurar com o Visual Studio Code
+O exercício consistiu em criar um arquivo de código que define a taxa de câmbio entre três moedas, configurar um arquivo launch.json e rodar o programa para verificar erros. Na verificação inicial são encontrados dois bugs: 
+- O valor exibido possui mais que dois dígitos após a casa decimal
+- O código falhou apresentando exceção de retorno de valor `undefined` e não exibiu o valor de **JPY**
+  Para analisar o primeiro bug, foi definido um ponto de interrupção na linha 39, e também foi observado o painel de inspeção de variáveis. Após o passo a passo da execução, foi visto que a variável `convertedValue` estava retornando um valor correto, porém ainda não tratado e exibindo mais que dois dígitos após a casa decimal. Foi visto que o código estava printando `convertedValue` ao invés de `displayValue`, o  qual já estava tratado para exibir somente dois dígitos após a casa decimal. Apenas mudar a variável printada resolveu o problema.
+  Para analisar o segundo erro, foi utilizada a opção **exceção não capturada** no painel de pontos de interrupção. O painel mostrou que havia um retorno `undefined` para a variável `value`, o que não era desejado. Reiniciando a pilha de chamadas foi possível observar que a variável `convertedValue` retornou `undefined`. Após isso, foi definido um ponto de interrupção condicional, em que o código devia parar quando a variável `convertedValue` retornasse `undefined`. Notou-se que essa variável recebia seu valor através da função `convertToCurrency`. Com o mouse sobre a variável `rates`, foi observado a falta de uma taxa de conversão entre **EUR** e **JPY**. Para corrigir o problema, a variável `rates foi posta sob o painel de inspeção de variáveis para verificar a falta de taxa de conversão até se chegar na chamada da função `setExchangeRate`. A fonte do problema era a taxa de conversão feita somente entre `sourceCurrency`e `targetCurrency`. A resolução do erro se deu através da definição de uma variável que calcula a taxa de câmbio de quaisquer moedas diferentes de `sourceCurrency` e `targetCurrency`.
+
 
 ## 4. Work with files and directories in a Node.js app
 ## 5. Build a web API with Node.js and Express
