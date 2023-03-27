@@ -410,5 +410,38 @@ findFiles("stores");
 ### Exercício: Trabalhar com o sistema de arquivos
 Exercício realizado na plataforma Microsoft Learn através do console Azure Cloud Shell, e também replicado em código aqui neste repositório. O exercício consistiu na criação de um algoritmo que verificaria por arquivos **sales.json** dentro de pastas.
 
+### Trabalhar com caminhos de diretório no Node.
+O node possui um mecanismo interno para tratar caminho de arquivos em sistema, é o chamado módulo `path`.
+
+#### Determinar o diretório atual
+O node expôe o caminho para o diretório atual através da constante `__dirname`.
+
+#### Trabalhar com caminhos
+Para referenciar o módulo interno **path**: ` const path = require("path");
+
+#### Caminhos de junção
+O módulo **path** trabalha com o conceito de caminho de arquivos e pastas, que são somente strings. Para adquirir o caminho para a pasta *stores/201*, o `path.join` retorna o caminho para você.
+Ex: 
+```
+console.log(path.join("stores", "201")); // stores/201
+```
+
+#### Determinar extensões de nome do arquivo
+O módulo *path* pode identificar o tipo de extensão de um arquivo através do método `path.extname`.
+Ex:
+```
+console.log(path.extname("sales.json"));
+```
+
+#### Obter tudo o que você precisa saber sobre um arquivo ou pasta
+Através do método `parse` é possível obter a maioria das informações necessárias sobre um arquivo ou pasta.
+Ex:
+```
+console.log(path.parse("stores/201/sales.json"));
+// { root: '', dir: 'stores/201', base: 'sales.json', ext: '.json', name: 'sales' }
+```
+
+### Exercício: Trabalhar com caminhos
+
 ## 5. Build a web API with Node.js and Express
 ## 6. Introduction to route management in Node.js with Javascript 
