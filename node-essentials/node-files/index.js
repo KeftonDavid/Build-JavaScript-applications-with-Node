@@ -1,34 +1,41 @@
 const fs = require("fs").promises;
+const path = require("path");
 
-async function findSalesFiles(folderName){
-        // array que recebe todos os itens na pasta atual
-        let salesFiles = [];
+async function findSalesFiles(folderName) {
+  // receber arquivos em array
+  let salesFiles = [];
 
-        async function findFiles(folderName){
-            const items = await fs.readdir(folderName, { withFileTypes: true });
-        // iterar sobre cada item encontrado
-        for (item of items){
-            // se o item é uma pasta, procurar na pasta
-            if(item.isDirectory()){
-                await findFiles(`${folderName}/${item.name}`);
-            }
-            else{
-                // se não é uma pasta, confirmar que é um sales.json
-                if(item.name === "sales.json"){
-                    // guardar o caminho do arquivo no array salesFiles
-                    await salesFiles.push(`${folderName}/${item.name}`);
-                }
-            }
+  async function findFiles(folderName) {
+    // ler todos os itens no diretório atual
+    const items = await fs.readdir(folderName, { withFileTypes: true });
+
+    // iterar sobre cada item encontrado
+    for (item of items) {
+      // se o item for uma pasta, procurar na pasta
+      if (item.isDirectory()) {
+        // chamada recursiva
+        await findFiles(path.join(folderName, item.name));
+      } else {
+        // ter certeza que  arquivo encontrado é um .json
+        if (path.extname(item.name) === ".json") {
+          // guardar caminho no array salesFiles
+          await salesFiles.push(path.join(folderName, item.name));
         }
+      }
     }
-// encontrar os arquivos
-await findFiles(folderName);
-// retornar o array com o caminho dos arquivos
-return salesFiles;
+  }
+
+  await findFiles(folderName);
+
+  return salesFiles;
 }
-async function main(){
-    const salesFiles = await findSalesFiles("stores");
-    console.log(salesFiles);
+
+async function main() {
+  const salesDir = path.join(__dirname, "stores");
+
+  // encontar caminho para arquivos
+  const salesFiles = await findSalesFiles(salesDir);
+  console.log(salesFiles);
 }
 
 main();
