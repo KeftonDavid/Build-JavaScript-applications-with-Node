@@ -348,6 +348,67 @@ O exercício consistiu em criar um arquivo de código que define a taxa de câmb
   Para analisar o segundo erro, foi utilizada a opção **exceção não capturada** no painel de pontos de interrupção. O painel mostrou que havia um retorno `undefined` para a variável `value`, o que não era desejado. Reiniciando a pilha de chamadas foi possível observar que a variável `convertedValue` retornou `undefined`. Após isso, foi definido um ponto de interrupção condicional, em que o código devia parar quando a variável `convertedValue` retornasse `undefined`. Notou-se que essa variável recebia seu valor através da função `convertToCurrency`. Com o mouse sobre a variável `rates`, foi observado a falta de uma taxa de conversão entre **EUR** e **JPY**. Para corrigir o problema, a variável `rates` foi posta sob o painel de inspeção de variáveis para verificar a falta de taxa de conversão até se chegar na chamada da função `setExchangeRate`. A fonte do problema era a taxa de conversão feita somente entre `sourceCurrency`e `targetCurrency`. A resolução do erro se deu através da definição de uma variável que calcula a taxa de câmbio de quaisquer moedas diferentes de `sourceCurrency` e `targetCurrency`.
 
 
-## 4. Work with files and directories in a Node.js app
+## 4. Trabalhar com arquivos e diretórios em um aplicativo Node
+### Introdução
+#### Objetivos de aprendizagem
+- Trabalhar com diretórios
+- Criar e excluir arquivos
+- Fazer a leitura de arquivos
+- Escrever em arquivos
+- Analisar dados em arquivos
+
+### Trabalhar com o sistema de arquivos
+#### Incluir o módulo fs
+o Node possui um módulo interno para trabalhar com o sistema de arquivos, chamado **fs module** (file system module).
+Para referenciar o módulo fs:
+```
+const fs = require("fs").promisses;
+```
+Idealmente deve-se utilizar o namespace `promises`, que permite o módulo fs trabalhar com chamadas assíncronas.
+
+#### Listar conteúdos em um diretório
+Para listar através dos conteúdos de uma pasta, os métodos `readdir` e `readdirasync` podem ser utilizados. Estes métodos retornam uma lista de itens.
+Ex:
+```
+const items = await fs.readdir("stores");
+console.log(items); // [ 201, 202, sales.json, totals.txt ]
+```
+
+#### Determinar o tipo de conteúdo
+Determinando com a opção `withFileTypes`, o `fs.readdir` retornará um array de objetos `Dirent` ao invés de um array de strings.
+Ex:
+```
+const items = await fs.readdir("stores", { withFileTypes: true });
+for (let item of items) {
+  const type = item.isDirectory() ? "folder" : "file";
+  console.log(`${item.name}: ${type}`);
+  // 201: folder, 202: folder, sales.json: file, totals.txt: file
+}
+```
+
+#### Uma observação sobre recursão
+Para quando existirem várias pastas aninhadas (pastas com subpastas com subpastas e assim sucessivamente), deve-se determinar se um item da lista é uma pasta, e caso seja, procurar arquivos nessa pasta e repetir o processo para cada pasta encontrada.
+A criando um método recursivo, é possível realizar esta tarefa.
+Ex:
+```
+function findFiles(folderName) {
+  const items = await fs.readdir(folderName, { withFileTypes: true });
+  items.forEach((item) => {
+    if (item.isDirectory()) {
+      // this is a folder, so call this method again and pass in
+      // the path to the folder
+      findFiles(`${folderName}/${item.name}`);
+    } else {
+      console.log(`Found file: ${item.name} in folder: ${folderName}`);
+    }
+  });
+}
+
+findFiles("stores");
+```
+
+### Exercício: Trabalhar com o sistema de arquivos
+
+
 ## 5. Build a web API with Node.js and Express
 ## 6. Introduction to route management in Node.js with Javascript 
