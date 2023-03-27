@@ -408,7 +408,7 @@ findFiles("stores");
 ```
 
 ### Exercício: Trabalhar com o sistema de arquivos
-
+Exercício realizado na plataforma Microsoft Learn através do console Azure Cloud Shell, e também replicado em código aqui neste repositório. O exercício consistiu na criação de um algoritmo que verificaria por arquivos **sales.json** dentro de pastas.
 
 ## 5. Build a web API with Node.js and Express
 ## 6. Introduction to route management in Node.js with Javascript 
