@@ -442,6 +442,7 @@ console.log(path.parse("stores/201/sales.json"));
 ```
 
 ### Exercício: Trabalhar com caminhos
+O exercício consistiu em modificar o código do exercício de sistema de arquivos, para usar a variável `__dirname` e o módulo *path*.
 
 ## 5. Build a web API with Node.js and Express
 ## 6. Introduction to route management in Node.js with Javascript 
