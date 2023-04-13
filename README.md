@@ -444,5 +444,55 @@ console.log(path.parse("stores/201/sales.json"));
 ### Exercício: Trabalhar com caminhos
 O exercício consistiu em modificar o código do exercício de sistema de arquivos, para usar a variável `__dirname` e o módulo *path*.
 
+### Criar arquivos e diretórios
+O módulo padrão **fs** permite criar, deletar, copiar, mover e manipular arquivos e diretórios.
+
+#### Criar diretórios
+O método `mkdir` permite a criação de diretórios.
+Ex:
+```
+// Criando a pasta 'newDir' dentro da pasta '201' que está dentro da pasta 'stores'
+const fs = require("fs").promises;
+const path = require("path");
+
+await fs.mkdir(path.join(__dirname, "stores", "201", "newDir"));
+
+// Passando a opção 'recursive', faz com que o comando crie a estrutura de arquivos caso não
+// exista. Não passar esta opção caso a estrutura de arquivos não exista, faz com que o comando
+// falhe
+await fs.mkdir(path.join(__dirname, "stores", "201", "newDir"), {
+  recursive: true
+});
+```
+
+#### Certifique-se que os diretórios existem
+Caso o diretório exista, o método `mkdir` retorna um erro. É recomendado encapsular o método `mkdir` em uma declaração `try/catch`.
+ex: 
+```
+const pathToCreate = path.join(__dirname, "stores", "201", "newDirectory");
+
+// criar o diretório salesTotal caso não exista
+try {
+  await fs.mkdir(salesTotalsDir);
+} catch {
+  console.log(`${salesTotalsDir} already exists.`);
+}
+```
+
+#### Criar arquivos
+É possível criar arquivos com o método `fs.writeFile`. Este método recebe como parâmetros o caminho para o arquivo e os dados a serem escritos no arquivo. Este método sobrescreve o arquivo caso ele já exista.
+ex:
+```
+// Criando o arquivo 'greetings.txt' com o texto 'Hello World'
+await fs.writeFile(path.join(__dirname, "greeting.txt", "Hello World!"));
+```
+Para criar o arquivo em branco, o ideal é passar uma string vazia, visto que simplesmente omitir o terceiro parâmetro faz com que o Node atribua 'undefined' ao arquivo.
+ex:
+
+```
+await fs.writeFile(path.join(__dirname, "greeting.txt", String()));
+```
+
+
 ## 5. Build a web API with Node.js and Express
 ## 6. Introduction to route management in Node.js with Javascript 
