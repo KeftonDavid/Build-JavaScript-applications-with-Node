@@ -493,6 +493,65 @@ ex:
 await fs.writeFile(path.join(__dirname, "greeting.txt", String()));
 ```
 
+### Exercício: criar arquivos e diretórios
+O exercício consistiu em usar os métodos `writeFile` e `mkdir` do módulo `fs` para criar uma pasta *salesTotals* e um arquivo *totals.txt* dentro dessa pasta.
+
+### Ler e escrever arquivos.
+#### Ler dados de arquivos
+Arquivos podem ser lidos através do método `readFile`
+ex: 
+```
+console.log(await fs.readFile("stores/201/sales.json"));
+// <Buffer 7b 0a 20 20 22 74 6f 74 61 6c 22 3a 20 32 32 33 38 35 2e 33 32 0a 7d>
+```
+
+O `readFile` retorna um objeto `Buffer` contendo o conteúdo do arquivo lido, porém em formato binário.
+Para conseguir realmente ler o arquivo, é necessário converter esse Buffer para string.
+ex: 
+```
+const bufferData = await fs.readFile("stores/201/sales.json");
+console.log(String(bufferData));
+// {
+//   "total": 22385.32
+// }
+```
+
+Para que você possa analisar os dados, é ideal (na maioria das vezes) que você transforme o Buffer em objeto JSON ao invés de uma string.
+ex:
+```
+const data = JSON.parse(await fs.readFile("stores/201/sales.json"));
+console.log(data.total);
+// 22385.32
+```
+
+#### Escrever dados em arquivos
+Para escrever dados em um arquivo, é possível utilizar o mesmo método `writeFile`
+ex: 
+```
+const data = JSON.parse(await fs.readFile("stores/201/sales.json"));
+
+// write the total to the "totals.json" file
+await fs.writeFile(("salesTotals/totals.txt"), data.total);
+
+// totals.txt
+// 22385.32
+```
+
+#### Acrescente dados a arquivos
+No exemplo anterior, o arquivo seria sempre substituído. Para apenas acrescentar dados, é possível passar uma flag no método `writeFile` para indicar que os dados devem ser acrescentados. O valor padrão da flag é `w`, que significa 'substituir o arquivo'. Para acrescentar, deve ser passada a flag `a`.
+ex: 
+```
+const data = JSON.parse(await fs.readFile("stores/201/sales.json"));
+
+// write the total to the "totals.json" file
+await fs.writeFile(path.join("salesTotals/totals.txt"), `${data.total}\r\n`, {
+  flag: "a"
+});
+
+// totals.json
+// 22385.32
+// 22385.32
+```
 
 ## 5. Build a web API with Node.js and Express
 ## 6. Introduction to route management in Node.js with Javascript 
